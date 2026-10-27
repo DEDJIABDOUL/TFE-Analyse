@@ -124,8 +124,6 @@ Les dossiers sont créés automatiquement s'ils n'existent pas.
 
 Détails dans `04_GUIDE_FORMATEUR/` (**Annexe B**).
 
-## Notes de transparence
-
-- Les scripts ont été exécutés et vérifiés avec **R 4.3.3 sous Linux**. Ils n'ont **pas** pu être testés sous Windows avec RStudio : faire un essai complet la veille.
-- La graine de simulation (`135`) a été retenue après essai de plusieurs graines, pour obtenir un profil pédagogique équilibré. Les associations sont des choix de simulation.
-- Fichiers ajoutés à l'arborescence demandée : `Atelier_TFE.Rproj` (racine) et `Mini_protocole_recherche_TFE.pdf` (`03_FICHES_PEDAGOGIQUES/`).
+> [!NOTE]
+> Pour me contacter,  dbatinou@gmail.com.
+> N'hésiter pas à m'envoyer vos questions ou inquiétudes
