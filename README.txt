@@ -1,87 +1,131 @@
-ATELIER RSTUDIO - ANALYSE DES DONNEES D'UN MEMOIRE (TFE)
-Sujet : Frequence et facteurs associes a la preeclampsie chez les femmes enceintes
-        prises en charge dans une structure hospitaliere de Kara, Togo.
+# Atelier RStudio : analyse des données d'un mémoire (TFE)
 
-*** ATTENTION : TOUTES LES DONNEES SONT SYNTHETIQUES (FICTIVES). ***
-Elles ne proviennent d'aucune patiente ni d'aucun hopital reel. Elles servent
-uniquement a apprendre l'analyse de donnees. Ne citez aucun resultat comme reel.
+**Sujet :** Fréquence et facteurs associés à la prééclampsie chez les femmes enceintes prises en charge dans une structure hospitalière de Kara, Togo.
 
-------------------------------------------------------------------
-1. CONTENU DU PROJET
-------------------------------------------------------------------
-01_DONNEES/                  donnees_TFE_preeclampsie_Kara.csv (400 femmes, 22 variables)
-                             dictionnaire_variables.pdf
-02_SCRIPTS_R/                01_generation_donnees.R  (recree les donnees)
-                             02_analyse_TFE.R         (l'analyse complete)
-03_FICHES_PEDAGOGIQUES/      Fiche_questions_recherche_TFE.pdf       
-                             Fiche_corrigee_questions_recherche.pdf 
-                             Mini_protocole_recherche_TFE.pdf    
-04_GUIDE_FORMATEUR/          Guide_formateur_analyse_TFE_R.pdf
-05_RESULTATS/                tableaux/ et graphiques/ 
-Atelier_TFE.Rproj            fichier a ouvrir pour demarrer le projet dans RStudio
+![R](https://img.shields.io/badge/R-%E2%89%A5%204.2-276DC3?logo=r&logoColor=white)
+![RStudio](https://img.shields.io/badge/RStudio-Desktop-75AADB?logo=rstudio&logoColor=white)
+![Données](https://img.shields.io/badge/donn%C3%A9es-synth%C3%A9tiques-orange)
 
-------------------------------------------------------------------
-2. LOGICIELS NECESSAIRES (gratuits)
-------------------------------------------------------------------
-- R (version 4.2 ou plus recente) : https://cran.r-project.org
-  (installer R AVANT RStudio)
-- RStudio Desktop : https://posit.co/download/rstudio-desktop/
-- Le package ggplot2 : installe automatiquement par le script (Internet requis la
-  premiere fois). Aucun autre package n'est necessaire.
+<p align="center">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMKeRvx4g3rWud0lngNOAK1_4w64Ky44Va8uzy0A_Hl10ncSu7UooHH4U&s=10" alt="Illustration 1" width="300" height="200">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUtnbrIXYwRAvQjpoJ4VM-NhyO1n4zcRGROk31nckUhw&s=10" alt="Illustration 2" width="300" height="200">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDu4-S3VhC8_hIeeoqperXPfxlhp1WT-xhdddm7258XQ&s=10" alt="Illustration 3" width="300" height="200">
+</p>
 
-------------------------------------------------------------------
-3. OUVRIR LE PROJET DANS RSTUDIO
-------------------------------------------------------------------
-a) Decompresser l'archive ZIP (clic droit > Extraire tout). Ne pas travailler
-   a l'interieur du ZIP.
-b) Double-cliquer sur Atelier_TFE.Rproj. RStudio s'ouvre sur le bon dossier.
-c) Dans le volet "Files", ouvrir 02_SCRIPTS_R puis 02_analyse_TFE.R.
-   Si les accents s'affichent mal : File > Reopen with Encoding > UTF-8.
+> [!WARNING]
+> **Toutes les données sont synthétiques.**
+> Elles ne proviennent d'aucune patiente ni d'aucun hôpital réel. Elles servent uniquement à apprendre l'analyse de données. **Ne citez aucun résultat comme réel.**
 
-------------------------------------------------------------------
-4. IMPORTER LES DONNEES
-------------------------------------------------------------------
-C'est fait par la Section 1 du script (ligne read.csv2). Le fichier CSV utilise le
-point-virgule comme separateur et la virgule decimale (format francais).
-Chemins relatifs : rien a modifier si le projet est ouvert avec le fichier .Rproj.
-Il n'est pas necessaire d'executer 01_generation_donnees.R.
+## Sommaire
 
-------------------------------------------------------------------
-5. EXECUTER LE SCRIPT
-------------------------------------------------------------------
-- Ligne par ligne : placer le curseur sur la ligne, Ctrl + Entree.
-- Tout le script d'un coup : Ctrl + Maj + Entree.
-Le script est organise en sections : 1 Preparation, 2 Exploration, 3 Les dix
-questions de recherche, 4 Tableaux, 5 Synthese des tests, 6 Graphiques,
-7 Exportation.
+1. [Contenu du projet](#1-contenu-du-projet)
+2. [Logiciels nécessaires](#2-logiciels-nécessaires)
+3. [Ouvrir le projet dans RStudio](#3-ouvrir-le-projet-dans-rstudio)
+4. [Importer les données](#4-importer-les-données)
+5. [Exécuter le script](#5-exécuter-le-script)
+6. [Où retrouver les résultats](#6-où-retrouver-les-résultats)
+7. [Adapter le script à un autre sujet de mémoire](#7-adapter-le-script-à-un-autre-sujet-de-mémoire)
+8. [Notes de transparence](#notes-de-transparence)
 
-------------------------------------------------------------------
-6. OU RETROUVER LES RESULTATS
-------------------------------------------------------------------
-05_RESULTATS/tableaux/    fichiers CSV (Tableau1 a Tableau5, syntheses), lisibles dans Excel
-05_RESULTATS/graphiques/  5 graphiques PNG (300 dpi, 16 x 10 cm) a inserer dans Word
-Les dossiers sont crees automatiquement s'ils n'existent pas.
+---
 
-------------------------------------------------------------------
-7. ADAPTER LE SCRIPT A UN AUTRE SUJET DE MEMOIRE
-------------------------------------------------------------------
-1) Placer votre fichier CSV dans 01_DONNEES.
-2) Section 1 : remplacer le nom du fichier. Si votre CSV utilise la virgule comme
-   separateur et le point comme decimale, remplacer read.csv2 par read.csv.
-3) Remplacer les noms de variables par les votres (verifier avec names(donnees)).
-4) Adapter les modalites (factor / levels) et les classes (cut) a vos variables.
-5) Pour chaque nouveau facteur, copier le bloc de la Question 5 et changer
-   uniquement le nom de la variable.
-6) Votre variable de resultat doit avoir les modalites "Non" et "Oui".
-7) Relancer tout le script : tableaux et graphiques sont refaits automatiquement.
-Details dans 04_GUIDE_FORMATEUR (Annexe B).
+## 1. Contenu du projet
 
-------------------------------------------------------------------
-NOTES DE TRANSPARENCE
-------------------------------------------------------------------
-- Les scripts ont ete executes et verifies avec R 4.3.3 sous Linux. Ils n'ont PAS pu
-  etre testes sous Windows avec RStudio : faire un essai complet la veille.
-- La graine de simulation (135) a ete retenue apres essai de plusieurs graines, pour
-  obtenir un profil pedagogique equilibre. Les associations sont des choix de simulation.
-- Fichiers ajoutes a l'arborescence demandee : Atelier_TFE.Rproj (racine) et
-  Mini_protocole_recherche_TFE.pdf (03_FICHES_PEDAGOGIQUES).
+```text
+.
+├── Atelier_TFE.Rproj                  # à ouvrir pour démarrer le projet dans RStudio
+├── 01_DONNEES/
+│   ├── donnees_TFE_preeclampsie_Kara.csv   # 400 femmes, 22 variables
+│   └── dictionnaire_variables.pdf
+├── 02_SCRIPTS_R/
+│   ├── 01_generation_donnees.R        # recrée les données
+│   └── 02_analyse_TFE.R               # l'analyse complète
+├── 03_FICHES_PEDAGOGIQUES/
+│   ├── Fiche_questions_recherche_TFE.pdf
+│   ├── Fiche_corrigee_questions_recherche.pdf
+│   └── Mini_protocole_recherche_TFE.pdf
+├── 04_GUIDE_FORMATEUR/
+│   └── Guide_formateur_analyse_TFE_R.pdf
+└── 05_RESULTATS/
+    ├── tableaux/
+    └── graphiques/
+```
+
+## 2. Logiciels nécessaires
+
+Tous sont gratuits.
+
+| Logiciel | Version | Lien |
+|---|---|---|
+| **R** | 4.2 ou plus récente | <https://cran.r-project.org> |
+| **RStudio Desktop** | dernière version | <https://posit.co/download/rstudio-desktop/> |
+| **ggplot2** (package) | — | installé automatiquement par le script |
+
+> [!IMPORTANT]
+> Installer **R avant RStudio**.
+> Une connexion Internet est requise la première fois pour installer `ggplot2`. Aucun autre package n'est nécessaire.
+
+## 3. Ouvrir le projet dans RStudio
+
+1. Décompresser l'archive ZIP (clic droit › *Extraire tout*). **Ne pas travailler à l'intérieur du ZIP.**
+2. Double-cliquer sur `Atelier_TFE.Rproj`. RStudio s'ouvre sur le bon dossier.
+3. Dans le volet **Files**, ouvrir `02_SCRIPTS_R` puis `02_analyse_TFE.R`.
+
+> [!TIP]
+> Si les accents s'affichent mal : **File › Reopen with Encoding › UTF-8**.
+
+## 4. Importer les données
+
+L'importation est faite par la **Section 1** du script (ligne `read.csv2`). Le fichier CSV utilise :
+
+- le **point-virgule** comme séparateur ;
+- la **virgule** comme séparateur décimal (format français).
+
+Les chemins sont relatifs : **rien à modifier** si le projet est ouvert avec le fichier `.Rproj`.
+
+> [!NOTE]
+> Il n'est pas nécessaire d'exécuter `01_generation_donnees.R`.
+
+## 5. Exécuter le script
+
+| Action | Raccourci |
+|---|---|
+| Exécuter ligne par ligne (curseur sur la ligne) | `Ctrl` + `Entrée` |
+| Exécuter tout le script d'un coup | `Ctrl` + `Maj` + `Entrée` |
+
+Le script est organisé en sections :
+
+1. Préparation
+2. Exploration
+3. Les dix questions de recherche
+4. Tableaux
+5. Synthèse des tests
+6. Graphiques
+7. Exportation
+
+## 6. Où retrouver les résultats
+
+| Dossier | Contenu |
+|---|---|
+| `05_RESULTATS/tableaux/` | Fichiers CSV (Tableau 1 à Tableau 5, synthèses), lisibles dans Excel |
+| `05_RESULTATS/graphiques/` | 5 graphiques PNG (300 dpi, 16 × 10 cm) à insérer dans Word |
+
+Les dossiers sont créés automatiquement s'ils n'existent pas.
+
+## 7. Adapter le script à un autre sujet de mémoire
+
+1. Placer votre fichier CSV dans `01_DONNEES/`.
+2. **Section 1** : remplacer le nom du fichier. Si votre CSV utilise la virgule comme séparateur et le point comme décimale, remplacer `read.csv2` par `read.csv`.
+3. Remplacer les noms de variables par les vôtres (vérifier avec `names(donnees)`).
+4. Adapter les modalités (`factor` / `levels`) et les classes (`cut`) à vos variables.
+5. Pour chaque nouveau facteur, copier le bloc de la **Question 5** et changer uniquement le nom de la variable.
+6. Votre variable de résultat doit avoir les modalités `"Non"` et `"Oui"`.
+7. Relancer tout le script : tableaux et graphiques sont refaits automatiquement.
+
+Détails dans `04_GUIDE_FORMATEUR/` (**Annexe B**).
+
+## Notes de transparence
+
+- Les scripts ont été exécutés et vérifiés avec **R 4.3.3 sous Linux**. Ils n'ont **pas** pu être testés sous Windows avec RStudio : faire un essai complet la veille.
+- La graine de simulation (`135`) a été retenue après essai de plusieurs graines, pour obtenir un profil pédagogique équilibré. Les associations sont des choix de simulation.
+- Fichiers ajoutés à l'arborescence demandée : `Atelier_TFE.Rproj` (racine) et `Mini_protocole_recherche_TFE.pdf` (`03_FICHES_PEDAGOGIQUES/`).
