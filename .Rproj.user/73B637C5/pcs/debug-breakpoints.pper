@@ -1,0 +1,21 @@
+{
+    "debugBreakpointsState": {
+        "breakpoints": [
+            {
+                "id": 0,
+                "path": "C:/Users/PC/Downloads/Atelier_RStudio_TFE_Preeclampsie_Kara/Atelier_RStudio_TFE_Preeclampsie_Kara/02_SCRIPTS_R/02_analyse_TFE.R",
+                "line_number": 54,
+                "function_steps": "",
+                "function_name": "faire_tableau",
+                "state": 2,
+                "editor_state": 2,
+                "editor_line_number": 54,
+                "is_pending_debug_completion": false,
+                "needs_updated_steps": false,
+                "type": 0,
+                "is_package_breakpoint": false,
+                "package_name": ""
+            }
+        ]
+    }
+}

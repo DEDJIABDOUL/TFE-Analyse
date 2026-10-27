@@ -1,0 +1,7 @@
+"Question";"Test";"Effectif_attendu_min";"p_value";"p_value_affichee";"Conclusion"
+"Q5 Âge (tranches) x prééclampsie";"Fisher";2,5;0,164895;"0,165";"Non significatif : absence d'association non prouvée"
+"Q6 Antécédent de prééclampsie x prééclampsie";"Fisher";2,6;0,009093;"0,009";"Association (ou différence) statistiquement significative"
+"Q7 HTA chronique x prééclampsie";"Fisher";2,8;0,002906;"0,003";"Association (ou différence) statistiquement significative"
+"Q8 Parité x prééclampsie";"Chi-deux";10,7;0,001612;"0,002";"Association (ou différence) statistiquement significative"
+"Q9 Grossesse multiple x prééclampsie";"Fisher";1,7;0,679284;"0,679";"Non significatif : absence d'association non prouvée"
+"Q10 Âge moyen selon le statut";"Test t de Student (Welch)";;0,88699;"0,887";"Non significatif : absence d'association non prouvée"
